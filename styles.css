@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: bauhaus;
+  src: url(./src/bauhaus93.ttf);
+}
+
+:root {
+    --pink: #F72585;
+    /* --darkblue: #1B065E; */
+    --black: #1F2232;
+    --blue: #2874E4;
+    --cyan: #1CCAD8;
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--black);
+    font-family: roboto;
+}
+
+navbar {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#bigtext {
+    display: inline;
+    color: var(--blue);
+}
+
+@keyframes blinkAnim {
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#bigtext .underline {
+    /* color: var(--pink); */
+    display: inline;
+}
+
+.colorchangechar{
+    color: var(--cyan);
+}
+
+aboutme p{
+    color: var(--white);
+}
+
+aboutme .small{
+    font-size: 6px;
+}
