@@ -15,6 +15,7 @@
 }
 
 body {
+    text-align: justify;
     background-color: var(--black);
     font-family: roboto;
 }
@@ -26,7 +27,7 @@ navbar {
     justify-content: space-between;
 }
 
-#bigtext {
+.bigtext {
     display: inline;
     color: var(--blue);
 }
@@ -49,7 +50,7 @@ navbar {
     }
 }
 
-#bigtext .underline {
+.bigtext .underline {
     /* color: var(--pink); */
     display: inline;
 }
@@ -64,4 +65,8 @@ aboutme p{
 
 aboutme .small{
     font-size: 6px;
+}
+
+.underline {
+    color: var(--blue);
 }

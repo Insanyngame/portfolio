@@ -6,36 +6,49 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let bigText = {
-    el0: document.querySelector("#bigtext1"),
-    el1: document.querySelector("#bigtextcolorchange"),
-    content0: "Hey, I'm ",
-    content1: "Insanyngame"
-}
-
-async function typeInsanyngame() {
-    for(idx of bigText.content1) {
-        bigText.el1.innerHTML += "<span class='colorchangechar'>" + idx + "</span>";
-        await delay(100);
+let bigTxt = {
+    aboutme:{
+        txt: "Hey, I'm ",
+        txtEl: document.querySelector("#aboutMe"),
+        txtColorchange: "Insanyngame",
+        txtColorchangeEl:  document.querySelector("#aboutMeCC"),
+        underlineEl: document.querySelector("#aboutMeUnderline"),
+    },
+    skills:{
+        txt: "",
+        txtEl: document.querySelector("#skills"),
+        txtColorchange: "Skills",
+        txtColorchangeEl:  document.querySelector("#skillsCC"),
+        underlineEl: document.querySelector("#skillsUnderline"),
+    },
+    projects:{
+        txt: "My ",
+        txtEl: document.querySelector("#projects"),
+        txtColorchange: "Projects",
+        txtColorchangeEl:  document.querySelector("#projectsCC"),
+        underlineEl: document.querySelector("#projectsUnderline"),
     }
 }
 
-async function typeBigText() {
-    for(idx of bigText.content0) {
-        bigText.el0.innerHTML += idx;
+
+async function typeBigText(section) {
+    for(idx of section.txt) {
+        section.txtEl.innerHTML += idx;
         await delay(100);
     }
-    await typeInsanyngame();
-    // bigText.el1.innerHTML = "<span class='colorchangechar'>" + bigText.el1.innerHTML.split('').join("</span><span class='colorchangechar'>") + "</span>";
-}
-
-typeBigText().then(() => {
-    document.querySelector(".underline").style = `
+    for(idx of section.txtColorchange) {
+        section.txtColorchangeEl.innerHTML += "<span class='colorchangechar'>" + idx + "</span>";
+        await delay(100);
+    }
+    section.underlineEl.style = `
         animation-name: blinkAnim;
         animation-duration: 2s;
         animation-iteration-count: infinite;
     `;
-})
+}
+
+// typeBigText(bigTxt.aboutme);
+// typeBigText(bigTxt.projects);
 
 document.addEventListener('mousemove', (e) => {
     let spans = document.querySelectorAll('.colorchangechar');
@@ -49,4 +62,41 @@ document.addEventListener('mousemove', (e) => {
         let color = `rgb(${cyan[0]*scale + pink[0]*(1-scale)}, ${cyan[1]*scale + pink[1]*(1-scale)}, ${cyan[2]*scale + pink[2]*(1-scale)})`;
         span.style.color = color;
     });
+});
+
+const options = {
+    root: null, // null means the viewport
+    rootMargin: '0px', // Margin around the root (viewport)
+    threshold: 0.5 // Trigger when 50% of the element is visible
+};
+
+// Callback function for Intersection Observer
+const callback = (entries, observer) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        console.log(entry.target);
+        if(entry.target.innerHTML.startsWith('<span id="aboutMe">')) {
+            typeBigText(bigTxt.aboutme);
+        }
+
+        if(entry.target.innerHTML.startsWith('<span id="projects">')) {
+            typeBigText(bigTxt.projects);
+        }
+
+        if(entry.target.innerHTML.startsWith('<span id="skills">')) {
+            typeBigText(bigTxt.skills);
+        }
+        // After the element appears, stop observing it
+        observer.unobserve(entry.target); // Stop observing the current element
+    }
+    });
+};
+
+// Create an Intersection Observer instance
+const observer = new IntersectionObserver(callback, options);
+
+// Target elements to observe
+const targets = document.querySelectorAll('.bigtext');
+targets.forEach(target => {
+    observer.observe(target); // Start observing each target
 });
