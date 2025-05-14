@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insanyngame</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevator.js/1.0.0/elevator.min.js"></script>
 </head>
 <body>
+    <hero style="margin: 0; padding: 0; display: block;">
+        <img src="./src/banner.png" width="100%" style="margin: 0; padding: 0; display: block;"/>
+    </hero>
+
     <navbar>
-        <div class="leftside">Potato</div>
-        <div class="rightside">Potato2</div>
+        <div class="leftside"><a href="#aboutMe">About Me</a><a href="#skills">Skills</a><a href="#projects">Projects</a></div>
+        <div class="rightside"><a href="#contactme">Contact Me</a></div>
     </navbar>
-    <aboutme>
+
+    <aboutme class="mainDiv">
+        <br>
         <h1 class="bigtext"><span id="aboutMe"></span><span id="aboutMeCC"></span><span id="aboutMeUnderline" class="underline">_</span></h1>
         <p>I was born in Brazil on December 7th, 2006, I'm a hobbyist game developer and currently in love with coding ❤️</p>
         <p>I started coding for competitive programming when I was 13 years old, and played a little bit with Scratch a year later (and made some horrible games that I won't share :P).</p>
@@ -20,17 +25,52 @@
         <p>In high school, I rediscovered my interest in competitive programming and learned a lot of different algorithms in <nobr>c++...</nobr> and I hated greedy and dynamic programming problems. Besides that I also participated in olympiads(not the sports one) such as Brazilian Math Olympiad(OBM) and Brazilian Informatics Olympiad(OBI) and really enjoyed participating in these events.</p>
         <p>Today, I'm graduating in Computer Science at University of São Paulo and I continue to make games and some small projects while practicing competitive programming for fun.</p>
         <p>When I'm not coding, I like to play the violin, chess, a few mobile and pc games, making tsurus(or any origami I know how to make) and obviously hanging out with friends. I'm also interested in cooking, making pixel art, photography and playing table tennis even tho I suck at those 😔</p>
-        <br><br><br><br><br><br><br><br><br><br><br><br>
     </aboutme>
+    <br>
 
-    <skills>
+    <skills class="mainDiv">
+        <br>
         <h1 class="bigtext"><span id="skills"></span><span id="skillsCC"></span><span id="skillsUnderline" class="underline">_</span></h1>
         <br>
+        <h2>Programming Languages</h2>
+        <div class="list">
+            <div class="boxItem">C++</div>
+            <div class="boxItem">JS</div>
+            <div class="boxItem">C</div>
+        </div>
+        <h2>Game Dev</h2>
+        <div class="list">
+            <div class="boxItem">KaplayJS</div>
+            <div class="boxItem">Musescore</div>
+            <div class="boxItem">LibreSprite</div>
+            <div class="boxItem">PiskelApp</div>
+        </div>
+        <h2>Miscellaneous</h2>
+        <div class="list">
+            <div class="boxItem">HTML & CSS</div>
+            <div class="boxItem">NodeJS</div>
+            <div class="boxItem">ExpressJS</div>
+            <div class="boxItem">EJS</div>
+            <div class="boxItem">Socket.io</div>
+            <div class="boxItem">DiscordJS</div>
+            <div class="boxItem">is-even</div>
+        </div>
+        <h2>Grass touching</h2>
+        <div class="list">
+            <div class="boxItem">Cooking</div>
+            <div class="boxItem">Violin</div>
+            <div class="boxItem">Chess</div>
+        </div>
     </skills>
+    <br>
 
-    <projects>
+    <projects class="mainDiv">
         <h1 class="bigtext"><span id="projects"></span><span id="projectsCC"></span><span id="projectsUnderline" class="underline">_</span></h1>
+        <br>
+
     </projects>
-    <script src="./script.js"></script>
+    <br>
+
+    <script type = "text/javascript" src="./script.js"></script>
 </body>
 </html>

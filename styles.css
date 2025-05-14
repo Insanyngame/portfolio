@@ -6,26 +6,66 @@
 }
 
 :root {
+    --darkpink: #D70565;
     --pink: #F72585;
-    /* --darkblue: #1B065E; */
+    --darkblue: #1B065E;
     --black: #1F2232;
     --blue: #2874E4;
     --cyan: #1CCAD8;
     --white: #FFFFFF;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px;
+}
+
 body {
     text-align: justify;
     background-color: var(--black);
     font-family: roboto;
+    padding: 0;
+    margin: 0;
+}
+
+hero {
+    margin: 0;
 }
 
 navbar {
+    position: sticky;
+    top: 0;
     margin: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-color: var(--darkpink);
+    z-index: 6;
 }
+
+navbar div {
+    margin: 6px;
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-between;
+    font-weight:500;
+}
+
+navbar div a {
+    padding: 10px;
+    margin: 2px;
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--darkblue);
+    text-decoration: none;
+}
+
+navbar a:hover {
+    text-decoration: underline var(--pink) solid 3px;
+}
+
 
 .bigtext {
     display: inline;
@@ -67,6 +107,78 @@ aboutme .small{
     font-size: 6px;
 }
 
+skills {
+    color: var(--white);
+}
+
 .underline {
     color: var(--blue);
+}
+
+@keyframes showing {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes hiding {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.list {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.boxItem {
+    /* border-width: 12px; */
+    /* background-color: var(--pink); */
+    margin: 6px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 4px solid var(--pink);
+}
+
+.boxItem:hover {
+    border-color: var(--darkpink);
+    /* padding: 12px;
+    margin: 12px;
+    border-radius: 6px; */
+}
+
+/*#showContent {
+    position: relative;
+} */
+
+p, h1, h2, .boxItem {
+    margin: 12px;
+}
+
+.hiddencontent {
+    position: absolute;
+    top:-20px;
+    transform-origin: top center;
+    line-height: 20px;
+    /* background-color: var(--darkblue); */
+    display: none;
+    animation: hiding 0.5s;
+}
+
+#showContent:hover > #content {
+    display: block;
+    opacity: 1;
+    animation: showing 0.5s;
 }
