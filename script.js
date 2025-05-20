@@ -29,7 +29,25 @@ let bigTxt = {
         underlineEl: document.querySelector("#projectsUnderline"),
     }
 }
+console.log(document.documentElement.clientWidth);
+if (window.scrollY >= document.querySelector('navbar').offsetTop-4 && document.documentElement.clientWidth > 370) {
+    document.querySelector('navbar').style = "background-color: var(--darkpink);";
+    document.querySelector('navbar').style.setProperty('--underlinecolor', "#F72585");
+}
 
+window.addEventListener('scroll', function() {
+    if(document.documentElement.clientWidth <= 370) return;
+    const stickyElement = document.querySelector('navbar');
+    // navbarlist = document.querySelectorAll('navbar');
+    // Check if the element is stuck (if its position relative to the viewport is 'fixed')
+    if (window.scrollY >= stickyElement.offsetTop-4) {
+        stickyElement.style = "background-color: var(--darkpink);";
+        stickyElement.style.setProperty('--underlinecolor', "#F72585");
+    } else {
+        stickyElement.style = "background-color: var(--blue)";
+        stickyElement.style.setProperty('--underlinecolor', "#1CCAD8");
+    }
+});
 
 async function typeBigText(section) {
     for(idx of section.txt) {
@@ -100,3 +118,19 @@ const targets = document.querySelectorAll('.bigtext');
 targets.forEach(target => {
     observer.observe(target); // Start observing each target
 });
+
+var navbarisshown = false;
+function updateMobileNavbar() {
+    if(document.documentElement.clientWidth > 370) return;
+    let navbar = document.querySelector("navbar");
+    let sandwich = document.querySelector("sandwich");
+
+    navbarisshown = !navbarisshown;
+    if(navbarisshown) {
+        navbar.style = 'left: 0; animation: shownavbar 0.5s;';
+        sandwich.style = 'left: 80%; animation: showsandwich 0.5s;';
+    } else {
+        navbar.style = 'left: -80%; animation: hidenavbar 0.5s;';
+        sandwich.style = 'left: 0; animation: hidesandwich 0.5s;';
+    }
+}

@@ -11,10 +11,11 @@
         <img src="./src/banner.png" width="100%" style="margin: 0; padding: 0; display: block;"/>
     </hero>
 
-    <navbar>
-        <div class="leftside"><a href="#aboutMe">About Me</a><a href="#skills">Skills</a><a href="#projects">Projects</a></div>
+    <navbar onclick="updateMobileNavbar()">
+        <div class="leftside"><a href="#aboutMe">About Me</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a id="leftsidecontact" href="#contactme">Contact Me</a></div>
         <div class="rightside"><a href="#contactme">Contact Me</a></div>
     </navbar>
+    <sandwich onclick="updateMobileNavbar()"><img class="white" src="./src/sandwich.svg" alt="[Open link icon]"></sandwich>
 
     <aboutme class="mainDiv">
         <br>
@@ -32,30 +33,33 @@
         <br>
         <h1 class="bigtext"><span id="skills"></span><span id="skillsCC"></span><span id="skillsUnderline" class="underline">_</span></h1>
         <br>
-        <h2>Programming Languages</h2>
+        <h2 class="nobottommargin">Programming Languages</h2>
         <div class="list">
             <div class="boxItem">C++</div>
             <div class="boxItem">JS</div>
             <div class="boxItem">C</div>
         </div>
-        <h2>Game Dev</h2>
+        <h2 class="nobottommargin">Game Dev</h2>
         <div class="list">
             <div class="boxItem">KaplayJS</div>
             <div class="boxItem">Musescore</div>
             <div class="boxItem">LibreSprite</div>
             <div class="boxItem">PiskelApp</div>
         </div>
-        <h2>Miscellaneous</h2>
+        <h2 class="nobottommargin">Miscellaneous</h2>
         <div class="list">
-            <div class="boxItem">HTML & CSS</div>
+            <div class="boxItem">HTML</div>
+            <div class="boxItem">CSS</div>
             <div class="boxItem">NodeJS</div>
             <div class="boxItem">ExpressJS</div>
             <div class="boxItem">EJS</div>
             <div class="boxItem">Socket.io</div>
             <div class="boxItem">DiscordJS</div>
             <div class="boxItem">is-even</div>
+            <div class="boxItem">Github</div>
+            <div class="boxItem">Git</div>
         </div>
-        <h2>Grass touching</h2>
+        <h2 class="nobottommargin">Grass touching</h2>
         <div class="list">
             <div class="boxItem">Cooking</div>
             <div class="boxItem">Violin</div>
@@ -67,7 +71,78 @@
     <projects class="mainDiv">
         <h1 class="bigtext"><span id="projects"></span><span id="projectsCC"></span><span id="projectsUnderline" class="underline">_</span></h1>
         <br>
+        <div class="list projectList">
+            <projectBox class="boxItem">
+                <div class="pt1">
+                    
+                    <h2>Insanyngame.is-a.dev</h2>
+                    <p>This website you are seeing!</p>
+                    <p>Made only with HTML, CSS and JS, no frameworks just for fun 😊</p>
+                    <img class="projectBanner" src="./src/websiteBanner.png" alt="[Website banner]">
+                    
+                </div>
+                <div class="pt2">
+                    <p class="nobottommargin">Required skills:</p>
+                    <div class="requiredskills list" style="margin: 0; padding: 6px;">
+                        <div class="boxItem">HTML</div>
+                        <div class="boxItem">CSS</div>
+                        <div class="boxItem">JS</div>
+                        <div class="boxItem">Github</div>
+                        <div class="boxItem">Git</div>
+                    </div>
+                </div>
+            </projectBox>
 
+            <projectBox class="boxItem">
+                <div class="pt1">
+                    
+                    <h2>A Small Bunny Game</h2>
+                    <p>A small platformer game I made for a game jam with KaplayJS!</p>
+                    <img class="projectBanner" src="./src/bunnyBanner.png" alt="[Bunny game image]">
+                    <br>
+                    <p style="display: flex; align-items: flex-start; justify-content: flex-start;">
+                        <a class="accessurl" href="https://insanyngame.is-a.dev/bunnyGame" target="_blank" style="display: flex; align-items: center; gap: 8px;">
+                            <img class="white" src="./src/openLink.svg" alt="[Open link icon]">
+                            Access URL
+                        </a>
+                    </p><p style="display: flex; align-items: flex-start; justify-content: flex-start;">
+                        <a class="noaccess" style="display: flex; align-items: center; gap: 8px;">
+                            <img class="white" src="./src/openLink.svg" alt="[Open link icon]">
+                            Mobile version coming soon™
+                        </a>
+                    </p>
+                </div>
+                <div class="pt2">
+                    <p class="nobottommargin">Required skills:</p>
+                    <div class="requiredskills list" style="margin: 0; padding: 6px;">
+                        <div class="boxItem">KaplayJS</div>
+                        <div class="boxItem">JS</div>
+                        <div class="boxItem">HTML</div>
+                        <div class="boxItem">Github</div>
+                        <div class="boxItem">Musescore</div>
+                        <div class="boxItem">PiskelApp</div>
+                    </div>
+                </div>
+            </projectBox>
+
+            <!-- <projectBox class="boxItem">
+                <div class="pt1">
+                    
+                    <h2>Insanyngame.is-a.dev</h2>
+                    <p>This website you are seeing!</p>
+                </div>
+                <div class="pt2">
+                    <p class="nobottommargin">Required skills:</p>
+                    <div class="requiredskills list" style="margin: 0; padding: 6px;">
+                        <div class="boxItem">HTML</div>
+                        <div class="boxItem">CSS</div>
+                        <div class="boxItem">JS</div>
+                        <div class="boxItem">Github</div>
+                        <div class="boxItem">Git</div>
+                    </div>
+                </div>
+            </projectBox> -->
+        </div>
     </projects>
     <br>
 
