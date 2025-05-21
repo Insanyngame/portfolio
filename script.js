@@ -27,16 +27,23 @@ let bigTxt = {
         txtColorchange: "Projects",
         txtColorchangeEl:  document.querySelector("#projectsCC"),
         underlineEl: document.querySelector("#projectsUnderline"),
+    },
+    contactme:{
+        txt: "",
+        txtEl: document.querySelector("#contactme"),
+        txtColorchange: "Contact Me",
+        txtColorchangeEl:  document.querySelector("#contactmeCC"),
+        underlineEl: document.querySelector("#contactmeUnderline"),
     }
 }
 console.log(document.documentElement.clientWidth);
-if (window.scrollY >= document.querySelector('navbar').offsetTop-4 && document.documentElement.clientWidth > 370) {
+if (window.scrollY >= document.querySelector('navbar').offsetTop-4 && document.documentElement.clientWidth > 600) {
     document.querySelector('navbar').style = "background-color: var(--darkpink);";
     document.querySelector('navbar').style.setProperty('--underlinecolor', "#F72585");
 }
 
 window.addEventListener('scroll', function() {
-    if(document.documentElement.clientWidth <= 370) return;
+    if(document.documentElement.clientWidth <= 600) return;
     const stickyElement = document.querySelector('navbar');
     // navbarlist = document.querySelectorAll('navbar');
     // Check if the element is stuck (if its position relative to the viewport is 'fixed')
@@ -96,13 +103,17 @@ const callback = (entries, observer) => {
         if(entry.target.innerHTML.startsWith('<span id="aboutMe">')) {
             typeBigText(bigTxt.aboutme);
         }
+        
+        if(entry.target.innerHTML.startsWith('<span id="skills">')) {
+            typeBigText(bigTxt.skills);
+        }
 
         if(entry.target.innerHTML.startsWith('<span id="projects">')) {
             typeBigText(bigTxt.projects);
         }
 
-        if(entry.target.innerHTML.startsWith('<span id="skills">')) {
-            typeBigText(bigTxt.skills);
+        if(entry.target.innerHTML.startsWith('<span id="contactme">')) {
+            typeBigText(bigTxt.contactme);
         }
         // After the element appears, stop observing it
         observer.unobserve(entry.target); // Stop observing the current element
@@ -120,17 +131,27 @@ targets.forEach(target => {
 });
 
 var navbarisshown = false;
+
+if(document.documentElement.clientWidth <= 600) document.querySelector("html").style = "scroll-padding-top: 0px;";
+
 function updateMobileNavbar() {
-    if(document.documentElement.clientWidth > 370) return;
+    if(document.documentElement.clientWidth > 600) {
+        document.querySelector("html").style = "scroll-padding-top: 64px;";
+        return;
+    }
+    document.querySelector("html").style = "scroll-padding-top: 0px;";
+
     let navbar = document.querySelector("navbar");
     let sandwich = document.querySelector("sandwich");
 
     navbarisshown = !navbarisshown;
     if(navbarisshown) {
-        navbar.style = 'left: 0; animation: shownavbar 0.5s;';
-        sandwich.style = 'left: 80%; animation: showsandwich 0.5s;';
+        document.querySelector("sandwichBackground").style = 'display: block;';
+        navbar.style = 'left: 20%; animation: shownavbar 0.5s;';
+        sandwich.style = 'left: 12%; animation: showsandwich 0.5s;';
     } else {
-        navbar.style = 'left: -80%; animation: hidenavbar 0.5s;';
-        sandwich.style = 'left: 0; animation: hidesandwich 0.5s;';
+        document.querySelector("sandwichBackground").style = 'display: none;';
+        navbar.style = 'left: 100%; animation: hidenavbar 0.5s;';
+        sandwich.style = 'left: 92%; animation: hidesandwich 0.5s;';
     }
 }

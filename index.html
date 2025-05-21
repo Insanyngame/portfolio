@@ -16,7 +16,7 @@
         <div class="rightside"><a href="#contactme">Contact Me</a></div>
     </navbar>
     <sandwich onclick="updateMobileNavbar()"><img class="white" src="./src/sandwich.svg" alt="[Open link icon]"></sandwich>
-
+    <sandwichBackground onclick="updateMobileNavbar()"></sandwichBackground>
     <aboutme class="mainDiv">
         <br>
         <h1 class="bigtext"><span id="aboutMe"></span><span id="aboutMeCC"></span><span id="aboutMeUnderline" class="underline">_</span></h1>
@@ -37,6 +37,7 @@
         <div class="list">
             <div class="boxItem">C++</div>
             <div class="boxItem">JS</div>
+            <div class="boxItem">TS</div>
             <div class="boxItem">C</div>
         </div>
         <h2 class="nobottommargin">Game Dev</h2>
@@ -124,26 +125,19 @@
                     </div>
                 </div>
             </projectBox>
-
-            <!-- <projectBox class="boxItem">
-                <div class="pt1">
-                    
-                    <h2>Insanyngame.is-a.dev</h2>
-                    <p>This website you are seeing!</p>
-                </div>
-                <div class="pt2">
-                    <p class="nobottommargin">Required skills:</p>
-                    <div class="requiredskills list" style="margin: 0; padding: 6px;">
-                        <div class="boxItem">HTML</div>
-                        <div class="boxItem">CSS</div>
-                        <div class="boxItem">JS</div>
-                        <div class="boxItem">Github</div>
-                        <div class="boxItem">Git</div>
-                    </div>
-                </div>
-            </projectBox> -->
         </div>
     </projects>
+
+    <contact class="mainDiv">
+        <h1 class="bigtext"><span id="contactme"></span><span id="contactmeCC"></span><span id="contactmeUnderline" class="underline">_</span></h1>
+        <br>
+        <div class="contactList">
+            <div class="boxItem pinkBackground" onclick="window.open(`https://discord.com/users/639599540512620544`)">Discord</div>
+            <div class="boxItem pinkBackground" onclick="window.open(`https://x.com/insanyngame`)">X</div>
+            <div class="boxItem pinkBackground" onclick="window.open(`https://www.youtube.com/@insanyngame`)">Youtube</div>
+            <div class="boxItem pinkBackground" onclick="window.open(`https://github.com/Insanyngame`)">Github</div>
+        </div>
+    </contact>
     <br>
 
     <script type = "text/javascript" src="./script.js"></script>
