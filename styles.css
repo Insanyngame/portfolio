@@ -260,6 +260,15 @@ projects .boxItem .boxItem:hover {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .nobottommargin{
     margin-bottom: 0;
 }
@@ -278,6 +287,12 @@ projects .boxItem .boxItem:hover {
     justify-content: space-evenly;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+}
+
 .boxItem {
     /* border-width: 12px; */
     /* background-color: var(--pink); */
@@ -286,6 +301,7 @@ projects .boxItem .boxItem:hover {
     padding: 6px;
     border-radius: 6px;
     border: 4px solid var(--pink);
+    opacity: 0;
 }
 
 .boxItem:hover {
@@ -334,7 +350,8 @@ sandwich {
     display: none;
     position: fixed;
     top: 5%;
-    left: 86%;
+    left: 100%;
+    transform: translate(-100%, 0%);
     border-radius: 6px 0 0 6px;
     padding: 6px;
     background-color: var(--pink);
@@ -369,10 +386,10 @@ sandwichBackground {
 }
 @keyframes showsandwich {
     0% {
-        left: 86%;
+        left: 100%;
     }
     100% {
-        left: 8%;
+        left: 20%;
     }
 }
 @keyframes hidenavbar {
@@ -385,10 +402,10 @@ sandwichBackground {
 }
 @keyframes hidesandwich {
     0% {
-        left: 8%;
+        left: 20%;
     }
     100% {
-        left: 86%;
+        left: 100%;
     }
 }
 
@@ -439,4 +456,12 @@ sandwichBackground {
     sandwich {
         display: block;
     }
+}
+
+
+aboutme p {
+    opacity: 0;
+}
+skills h2 {
+    opacity: 0;
 }

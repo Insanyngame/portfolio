@@ -92,7 +92,7 @@ document.addEventListener('mousemove', (e) => {
 const options = {
     root: null, // null means the viewport
     rootMargin: '0px', // Margin around the root (viewport)
-    threshold: 0.5 // Trigger when 50% of the element is visible
+    threshold: 0.2 // Trigger when 50% of the element is visible
 };
 
 // Callback function for Intersection Observer
@@ -121,14 +121,36 @@ const callback = (entries, observer) => {
     });
 };
 
+const fadeIn = (entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            console.log("a");
+            entry.target.style = 'animation: fadeIn 2s; opacity: 1;';
+
+            observer.unobserve(entry.target);
+        }
+    })
+}
+
 // Create an Intersection Observer instance
 const observer = new IntersectionObserver(callback, options);
+const fadeInObserver = new IntersectionObserver(fadeIn, options);
 
 // Target elements to observe
 const targets = document.querySelectorAll('.bigtext');
 targets.forEach(target => {
     observer.observe(target); // Start observing each target
 });
+
+document.querySelectorAll('.boxItem').forEach(target => {
+    fadeInObserver.observe(target);
+})
+document.querySelectorAll('aboutme p').forEach(target => {
+    fadeInObserver.observe(target);
+})
+document.querySelectorAll('skills h2').forEach(target => {
+    fadeInObserver.observe(target);
+})
 
 var navbarisshown = false;
 
@@ -148,10 +170,10 @@ function updateMobileNavbar() {
     if(navbarisshown) {
         document.querySelector("sandwichBackground").style = 'display: block;';
         navbar.style = 'left: 20%; animation: shownavbar 0.5s;';
-        sandwich.style = 'left: 8%; animation: showsandwich 0.5s;';
+        sandwich.style = 'left: 20%; animation: showsandwich 0.5s;';
     } else {
         document.querySelector("sandwichBackground").style = 'display: none;';
         navbar.style = 'left: 100%; animation: hidenavbar 0.5s;';
-        sandwich.style = 'left: 86%; animation: hidesandwich 0.5s;';
+        sandwich.style = 'left: 100%; animation: hidesandwich 0.5s;';
     }
 }
