@@ -334,7 +334,7 @@ sandwich {
     display: none;
     position: fixed;
     top: 5%;
-    left: 92%;
+    left: 86%;
     border-radius: 6px 0 0 6px;
     padding: 6px;
     background-color: var(--pink);
@@ -344,7 +344,6 @@ sandwich {
 sandwich img {
     vertical-align: middle;
     margin: auto;
-    left: 92%;
     width: 36px;
 }
 
@@ -370,10 +369,10 @@ sandwichBackground {
 }
 @keyframes showsandwich {
     0% {
-        left: 92%;
+        left: 86%;
     }
     100% {
-        left: 12%;
+        left: 8%;
     }
 }
 @keyframes hidenavbar {
@@ -386,10 +385,10 @@ sandwichBackground {
 }
 @keyframes hidesandwich {
     0% {
-        left: 12%;
+        left: 8%;
     }
     100% {
-        left: 92%;
+        left: 86%;
     }
 }
 

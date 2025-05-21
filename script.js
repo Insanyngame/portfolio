@@ -148,10 +148,10 @@ function updateMobileNavbar() {
     if(navbarisshown) {
         document.querySelector("sandwichBackground").style = 'display: block;';
         navbar.style = 'left: 20%; animation: shownavbar 0.5s;';
-        sandwich.style = 'left: 12%; animation: showsandwich 0.5s;';
+        sandwich.style = 'left: 8%; animation: showsandwich 0.5s;';
     } else {
         document.querySelector("sandwichBackground").style = 'display: none;';
         navbar.style = 'left: 100%; animation: hidenavbar 0.5s;';
-        sandwich.style = 'left: 92%; animation: hidesandwich 0.5s;';
+        sandwich.style = 'left: 86%; animation: hidesandwich 0.5s;';
     }
 }
