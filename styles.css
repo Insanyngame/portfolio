@@ -51,7 +51,7 @@ navbar {
 }
 
 navbar div {
-    margin: 6px;
+    margin: 6px 12px 6px 12px;
     /* width: 80%; */
     display: flex;
     justify-content: space-between;
@@ -67,16 +67,12 @@ navbar div a {
 
     color: var(--darkblue);
     text-decoration: none;
+    font-size: 18px;
 }
 
 navbar a:hover {
-    /* width: 110%; */
     border-bottom: 3px solid var(--underlinecolor);
     margin-bottom: 9px;
-    /* position: absolute; */
-    /* text-decoration: underline var(--underlinecolor) solid 3px;
-    text-underline-offset: 5px;
-    text-underline-width: 2px; */
 }
 
 
@@ -127,6 +123,10 @@ navbar a:hover {
 
 .colorchangechar{
     color: var(--cyan);
+}
+
+.content {
+    margin: 12px;
 }
 
 aboutme p{
@@ -285,6 +285,13 @@ projects .boxItem .boxItem:hover {
 .contactList {
     display: flex;
     justify-content: space-evenly;
+}
+
+.contactList .boxItem {
+    display: flex;
+    align-items: center; /* This forces vertical centering */
+    /* optional: gap helps separate the icon and text */
+    gap: 8px; 
 }
 
 footer {
